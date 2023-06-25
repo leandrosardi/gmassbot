@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = 'gmassbot'
-    s.version     = '1.1'
+    s.version     = '1.2'
     s.date        = '2023-06-25'
     s.summary     = "Ruby library for automation operation on the GMass Deliverability Test and Spam Checker."
     s.description = "Find documentation here: https://github.com/leandrosardi/gmassbot"

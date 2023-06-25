@@ -1,8 +1,5 @@
-require 'blackstack-core'
-require 'blackstack-deployer'
-require 'simple_command_line_parser'
+require 'selenium-webdriver'
 require 'simple_cloud_logging'
-require 'mechanize'
 require 'colorize'
 require 'pry'
 
@@ -36,6 +33,8 @@ module BlackStack
             end
 
             def self.check(keyword, l=nil)
+                keyword = keyword.to_s
+
                 l = BlackStack::DummyLogger.new(nil) if l.nil?
                 res = []
                 using_permanent_driver = (@@permanent_driver != nil)
@@ -44,9 +43,7 @@ module BlackStack
                 driver = @@permanent_driver if using_permanent_driver
                 driver = self.init(l) unless using_permanent_driver
                 l.done
-
-                driver.navigate.to "https://www.gmass.co/inbox?q=#{keyword}"
-
+                
                 l.logs 'Starting chrome... '
                 driver.navigate.to "https://www.gmass.co/inbox?q=#{keyword}"
                 l.done
