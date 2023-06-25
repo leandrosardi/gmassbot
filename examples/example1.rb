@@ -1,13 +1,10 @@
 # Documentation:
 # - https://github.com/leandrosardi/gmassbot
 #
-# Reference:
-# - https://www.browserstack.com/guide/selenium-ruby-tutorial
-# 
 
 require_relative '../lib/gmassbot.rb'
-# require `gmassbot`
+#require 'gmassbot'
 
-l = BlackStack::LocalLogger.new('./test.log')
+l = BlackStack::LocalLogger.new('./example1.log')
 keyword = nil
 results = BlackStack::Bots::GMass.check(keyword, l)
